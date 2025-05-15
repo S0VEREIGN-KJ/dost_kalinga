@@ -7,6 +7,7 @@
     @vite([
         'resources/css/app.css',
         'resources/js/app.js',
+        'resources/css/add_proj_overlay.css',
     ])
     
     <!-- Material Icons -->
@@ -53,6 +54,7 @@
         .admin-btn:hover {
             background-color: #0056b3;
         }
+        
     </style>
 </head>
 
