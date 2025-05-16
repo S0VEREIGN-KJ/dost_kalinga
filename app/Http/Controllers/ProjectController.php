@@ -55,13 +55,13 @@ public function update(Request $request, $proj_id)
 {
     $project = Project::findOrFail($proj_id);
 
-    $project->proj_name = $request->input('proj_name');
-    $project->proj_desc = $request->input('proj_desc');
-    $project->org_name = $request->input('org_name');
-    $project->proj_type = $request->input('proj_type');
-    $project->proj_address = $request->input('proj_address');
-    $project->sector = $request->input('sector');
-    $project->status = $request->input('status');
+    $project->proj_name = $request->input('proj_name', $project->proj_name);
+    $project->proj_desc = $request->input('proj_desc', $project->proj_desc);
+    $project->org_name = $request->input('org_name', $project->org_name);
+    $project->proj_type = $request->input('proj_type', $project->proj_type);
+    $project->proj_address = $request->input('proj_address', $project->proj_address);
+    $project->sector = $request->input('sector', $project->sector);
+    $project->status = $request->input('status', $project->status);
 
     $project->save();
 
