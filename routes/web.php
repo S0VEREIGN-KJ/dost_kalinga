@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\AdminPanelController;
 use Illuminate\Support\Facades\Route;
+use App\Models\PstcoKalinga;
 
 Route::get('/', function () {
     return view('home');
@@ -17,17 +19,48 @@ Route::post('/projects', [ProjectController::class, 'store']);
 // for the edit and update projects
 Route::put('/projects/{proj_id}', [ProjectController::class, 'update']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 // delete
 Route::delete('/projects/{id}', [ProjectController::class, 'destroy']);
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// Project API Routes
+Route::prefix('projects')->group(function () {
+    // Get all projects
+    Route::get('/', [ProjectController::class, 'index']);
+    
+    // Get unique municipalities
+    Route::get('/municipalities', [ProjectController::class, 'municipalities']);
+    
+    // Get projects statistics
+    Route::get('/statistics', [ProjectController::class, 'statistics']);
+    
+    // Get projects by municipality
+    Route::get('/municipality/{municipality}', [ProjectController::class, 'byMunicipality']);
+    
+    // Get single project
+    Route::get('/{id}', [ProjectController::class, 'show']);
 });
 
-require __DIR__.'/auth.php';
+// Alternative grouped routes (if you prefer this structure)
+Route::apiResource('projects', ProjectController::class)->only(['index', 'show']);
+
+Route::get('/static-points', function () {
+    return PstcoKalinga::all();
+});
+
+// Admin login form route (GET request to show the form)
+Route::get('/admin/login', [App\Http\Controllers\AdminPanelController::class, 'showLoginForm'])->name('admin.login');
+
+// Admin login route (POST request to handle login)
+Route::post('/admin/login', [App\Http\Controllers\AdminPanelController::class, 'login'])->name('admin.login.submit');
+
+// Admin dashboard
+Route::get('/admin', [AdminPanelController::class, 'dashboard'])
+    ->middleware('auth:admin')
+    ->name('admin.dashboard');
+
+// Admin logout
+Route::post('/admin/logout', [AdminPanelController::class, 'logout'])
+    ->middleware('auth:admin')
+    ->name('admin.logout');
+
+

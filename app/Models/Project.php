@@ -21,6 +21,7 @@ class Project extends Model
         'proj_desc',
         'org_name',
         'proj_type',
+        'proj_municipality',
         'proj_address',
         'sector',
         'status',
@@ -30,5 +31,16 @@ class Project extends Model
     public function coordinate()
     {
         return $this->belongsTo(Coordinate::class, 'proj_loc', 'loc_id');
+    }
+
+    public function scopeByMunicipality($query, $municipality)
+    {
+        return $query->where('proj_municipality', $municipality);
+    }
+
+    // Scope to get active projects
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
     }
 }

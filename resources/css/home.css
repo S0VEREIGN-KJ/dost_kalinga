@@ -1,0 +1,561 @@
+       * {
+            box-sizing: border-box;
+        }
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 110px;
+            background-color:rgb(0, 0, 0);
+        }
+
+        .header-image {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-circle {
+            background-color: white;
+            border-radius: 50%;
+            padding: 10px;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        /* Middle image styles */
+        .middle-image img {
+            height: 120px;
+            width: auto;
+        }
+        .header-image img {
+            height: 120px;
+            width: 150px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        .logo-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #2d3748;
+            color: white;
+        }
+
+        body, html {
+            background-color: rgb(3, 169, 244);
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #map {
+            width: 100%;
+            height: 600px;
+        }
+
+        .admin-btn {
+            float: right;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .admin-btn:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Existing overlay styles */
+        .proj_overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            display: none;
+            transition: opacity 0.3s ease;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        /* Admin Login Modal Styles */
+        .admin-login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .admin-login-modal {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: fadeInScale 0.3s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .admin-login-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .admin-login-header h2 {
+            color: #333;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .admin-login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+
+        .login-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .login-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn.primary {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .login-btn.primary:hover {
+            background-color: #0056b3;
+        }
+
+        .login-btn.secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .login-btn.secondary:hover {
+            background-color: #545b62;
+        }
+
+        .close-login {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .close-login:hover {
+            color: #000;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* Zoom In Animation */
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8) translate(-50%, -50%);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1) translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+
+        /* Zoom Out Animation */
+        @keyframes zoomOut {
+            from {
+                transform: scale(1) translate(-50%, -50%);
+                opacity: 1;
+            }
+            to {
+                transform: scale(0.8) translate(-50%, -50%);
+                opacity: 0;
+            }
+        }
+
+        .proj_overlay-content {
+            border: 1px solid rgb(121, 121, 121);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 600px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-fill-mode: forwards;
+        }
+
+        .proj_overlay-content.show {
+            animation: zoomIn 0.3s ease-out forwards;
+        }
+
+        .proj_overlay-content.hide {
+            animation: zoomOut 0.3s ease-in forwards;
+        }
+
+        .proj_overlay-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .proj_overlay-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .proj_input-selection {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .proj_input-selection label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #3399ff;
+        }
+
+        .proj_input-selection input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 30px;
+        }
+
+        .proj_input-selection select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .proj_overlay-footer {
+            text-align: right;
+        }
+
+        .kra_save-btn, .close-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .kra_save-btn:hover, .close-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .close-x {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .close-x:hover {
+            color: #000;
+        }
+
+        .proj_overlay_edit {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            display: none;
+            transition: opacity 0.3s ease;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .proj_overlay_edit-content {
+            border: 1px solid rgb(121, 121, 121);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 600px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-fill-mode: forwards;
+        }
+
+        .proj_overlay_edit-content.show {
+            animation: zoomIn 0.3s ease-out forwards;
+        }
+
+        .proj_overlay-content_edit.hide {
+            animation: zoomOut 0.3s ease-in forwards;
+        }
+
+
+
+/* AFTER THE BODY */
+        .legend-container {
+            display: flex;
+            width: 100%;
+            min-height: 400px;
+            gap: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .legends-column {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .dropdown-column {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .column-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        .legend-icon {
+            width: 48px;
+            height: 48px;
+            margin-right: 12px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        
+        .legend-description {
+            font-weight: bold;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .municipality-accordion {
+            width: 100%;
+        }
+        
+        .municipality-item {
+            margin-bottom: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .municipality-header {
+            padding: 15px;
+            background: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .municipality-header:hover {
+            background: #e9ecef;
+        }
+        
+        .municipality-header.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .municipality-name {
+            font-weight: 600;
+        }
+        
+        .accordion-arrow {
+            font-size: 12px;
+            transition: transform 0.3s;
+            color: #666;
+        }
+        
+        .municipality-header.active .accordion-arrow {
+            transform: rotate(180deg);
+            color: white;
+        }
+        
+        .projects-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: white;
+        }
+        
+        .projects-content.expanded {
+            max-height: 500px;
+        }
+        
+        .project-item {
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            border-radius: 0 4px 4px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .project-item:hover {
+            background: #e9ecef;
+            cursor: pointer;
+        }
+        
+        .no-projects {
+            color: #666;
+            font-style: italic;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .custom-shape-divider-bottom-1743647769 {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            z-index: 99;
+        }
+        .custom-shape-divider-bottom-1743647769 svg {
+            position: relative;
+            display: block;
+            width: calc(179% + 1.3px);
+            height: 55px;
+            transform: rotateY(180deg);
+        }
+        .custom-shape-divider-bottom-1743647769 .shape-fill {
+            fill:rgb(0, 0, 0) ; 
+        }
