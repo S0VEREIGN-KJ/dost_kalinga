@@ -1,8 +1,9 @@
 <!-- /**
  * Project: PSTC-Kalinga Innovation, Setup & Project Locator
  * Author: Karl Jasper G. Del Rosario
+ * Email: karljasper1231@gmail.com
  * Date: June 2025
- * Description:  This project visualizes DOST project locations in Kalinga using a map-based interface.
+ * Description:  This project visualizes DOST projects, setups, and innovations locations in Kalinga using a map-based interface.
  */
   -->
  
@@ -34,6 +35,7 @@
           <option value="Setup">Setup</option>
           <option value="Community Based">Community Based</option>
           <option value="Assisted">Assisted</option>
+          <option value="Innovation">Innovation</option>
       </select>
 
       <label for="description">Description:</label>
@@ -114,6 +116,7 @@
         <option value="Setup">Setup</option>
         <option value="Community Based">Community Based</option>
         <option value="Assisted">Assisted</option>
+        <option value="Innovation">Innovation</option>
       </select>
 
       
