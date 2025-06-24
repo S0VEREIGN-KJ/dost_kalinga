@@ -1,6 +1,7 @@
 <!-- /**
- * Project: PSTC-Kalinga Innovation, Setup & Project Locator
+ * Project: PSTO-Kalinga Innovation, Setup & Project Locator
  * Author: Karl Jasper G. Del Rosario
+ * Email: karljasper1231@gmail.com
  * Date: June 2025
  * Description:  This project visualizes DOST project locations in Kalinga using a map-based interface.
  */
@@ -568,8 +569,8 @@
                 </div>
 
                 <div class="header-text-wrapper">
-                <p class="header-text2">CHATBOT</p>
-                    <p class="header-text">Department of Science and Technology</p>
+                <p class="header-text2">KaTechBOT</p>
+                    <p class="header-text">Provincial Science and Technology Office Kalinga</p>
                     <span class="green-dot"></span>
                
                 </div>
@@ -624,9 +625,9 @@ return chatLi;
 
 const dialogFlow = {
     start: {
-        message: "Hello! I'm the PSTC-Kalinga DOST Chatbot. Welcome to the Provincial Science and Technology Center of Kalinga! How can I help you today?",
+        message: "Hello! I'm the PSTO-Kalinga DOST KaTechBot. Welcome to the Provincial Science and Technology Center of Kalinga! How can I help you today?",
         options: [
-            { label: "About PSTC-Kalinga DOST", next: "about_pstc" },
+            { label: "About PSTO-Kalinga DOST", next: "about_pstc" },
             { label: "Our Services & Programs", next: "services" },
             { label: "Equipment & Facilities", next: "equipment" },
             { label: "Contact Information", next: "contact" }
@@ -634,7 +635,7 @@ const dialogFlow = {
     },
     
     about_pstc: {
-        message: "PSTC-Kalinga is the Provincial Science and Technology Center under the Department of Science and Technology (DOST). We serve as the regional hub for science and technology innovation in Kalinga Province, supporting local communities, researchers, and entrepreneurs.",
+        message: "PSTO-Kalinga is the Provincial Science and Technology Center under the Department of Science and Technology (DOST). We serve as the regional hub for science and technology innovation in Kalinga Province, supporting local communities, researchers, and entrepreneurs.",
         options: [
             { label: "Our Mission & Vision", next: "mission_vision" },
             { label: "Location & Coverage Area", next: "location" },
@@ -654,7 +655,7 @@ const dialogFlow = {
     },
 
     location: {
-        message: "PSTC-Kalinga is located in Tabuk City, Kalinga Province, Cordillera Administrative Region. We serve all municipalities of Kalinga including Tabuk, Lubuagan, Pasil, Pinukpuk, Rizal, Tanudan, Tinglayan, and Balbalan.",
+        message: "PSTO-Kalinga is located in Tabuk City, Kalinga Province, Cordillera Administrative Region. We serve all municipalities of Kalinga including Tabuk, Lubuagan, Pasil, Pinukpuk, Rizal, Tanudan, Tinglayan, and Balbalan.",
         options: [
             { label: "How to get here", next: "directions" },
             { label: "Our coverage areas", next: "coverage" },
@@ -663,7 +664,7 @@ const dialogFlow = {
     },
 
     services: {
-        message: "PSTC-Kalinga offers various science and technology services to support local development:",
+        message: "PSTO-Kalinga offers various science and technology services to support local development:",
         options: [
             { label: "Technology Transfer & Technical Support", next: "tech_transfer" },
             { label: "Community Empowerment (CEST)", next: "community_empowerment" },
@@ -706,7 +707,7 @@ const dialogFlow = {
     },
 
     scholarship_programs: {
-        message: "PSTC-Kalinga facilitates various DOST scholarship programs: DOST-SEI Undergraduate and Graduate Scholarships for higher education, and Junior Level Science Scholarship (JLSS) for deserving students.",
+        message: "PSTO-Kalinga facilitates various DOST scholarship programs: DOST-SEI Undergraduate and Graduate Scholarships for higher education, and Junior Level Science Scholarship (JLSS) for deserving students.",
         options: [
             { label: "Undergraduate Scholarships", next: "undergrad_scholarships" },
             { label: "Graduate Scholarships", next: "grad_scholarships" },
@@ -717,7 +718,7 @@ const dialogFlow = {
     },
 
     director_info: {
-        message: "PSTC-Kalinga is headed by Director Jasmin L. Donaal, who leads our team in advancing science and technology initiatives throughout Kalinga Province and ensuring effective implementation of our programs and services.",
+        message: "PSTO-Kalinga is headed by Director Jasmin L. Donaal, who leads our team in advancing science and technology initiatives throughout Kalinga Province and ensuring effective implementation of our programs and services.",
         options: [
             { label: "Contact the Director", next: "director_contact" },
             { label: "Office Hours", next: "office_hours" },
@@ -726,7 +727,7 @@ const dialogFlow = {
     },
 
     equipment: {
-        message: "PSTC-Kalinga is equipped with modern facilities and equipment to support our programs:",
+        message: "PSTO-Kalinga is equipped with modern facilities and equipment to support our programs:",
         options: [
             { label: "Agricultural Machinery", next: "agri_equipment" },
             { label: "Furniture & Woodworking", next: "furniture_woodworking" },
@@ -756,7 +757,7 @@ const dialogFlow = {
     },
 
     contact: {
-        message: "Get in touch with PSTC-Kalinga DOST: Address: Bulanao, Tabuk City, Kalinga, Phone: 0917 167 5498, Email: pstc-kalinga@car.dost.gov.ph , Office Hours: Monday to Friday, 8:00 AM - 5:00 PM",
+        message: "Get in touch with PSTO-Kalinga DOST: Address: Bulanao, Tabuk City, Kalinga, Phone: 0917 167 5498, Email: pstc-kalinga@car.dost.gov.ph , Office Hours: Monday to Friday, 8:00 AM - 5:00 PM",
         options: [
             { label: "Schedule a Visit", next: "schedule_visit" },
             { label: "Request Information", next: "request_info" },
@@ -797,7 +798,7 @@ const dialogFlow = {
     },
 
     partnerships: {
-        message: "PSTC-Kalinga partners with: Local Government Units of Kalinga, State Universities and Colleges, Other DOST Regional Offices, International development organizations, Private sector companies, and Indigenous communities for collaborative research and development.",
+        message: "PSTO-Kalinga partners with: Local Government Units of Kalinga, State Universities and Colleges, Other DOST Regional Offices, International development organizations, Private sector companies, and Indigenous communities for collaborative research and development.",
         options: [
             { label: "University Collaborations", next: "university_collab" },
             { label: "LGU Partnerships", next: "lgu_partnerships" },
@@ -807,7 +808,7 @@ const dialogFlow = {
     },
 
     schedule_visit: {
-        message: "To schedule a visit to PSTC-Kalinga: Call us during office hours, Send an email with your preferred date and time, Specify the purpose of your visit, and Allow at least 3 days advance notice for proper accommodation.",
+        message: "To schedule a visit to PSTO-Kalinga: Call us during office hours, Send an email with your preferred date and time, Specify the purpose of your visit, and Allow at least 3 days advance notice for proper accommodation.",
         options: [
             { label: "Group Visit Requirements", next: "group_visit" },
             { label: "Individual Consultation", next: "individual_consult" },
@@ -817,7 +818,7 @@ const dialogFlow = {
     },
 
     end_chat: {
-        message: "Thank you for contacting PSTC-Kalinga DOST! We're committed to advancing science and technology for Kalinga's development. Have a great day!",
+        message: "Thank you for contacting PSTO-Kalinga DOST! We're committed to advancing science and technology for Kalinga's development. Have a great day!",
         options: [
             { label: "Start Over", next: "start" }
         ]

@@ -29,7 +29,7 @@
         <div class="logo-text">
             <span class="logo-title">Provincial Science and Technology Office - Kalinga</span>
         <br>
-            <span style="font-size:20pt;"  class="logo-title">PSTC-Kalinga Innovation, Setup & Project Locator </span>
+            <span style="font-size:20pt;"  class="logo-title">PSTO-Kalinga Project Locator</span>
         </div>
     </div>
         <!-- Middle Image -->

@@ -1,5 +1,5 @@
 <!-- /**
- * Project: PSTC-Kalinga Innovation, Setup & Project Locator
+ * Project: PSTO-Kalinga Innovation, Setup & Project Locator
  * Author: Karl Jasper G. Del Rosario
 * Email: karljasper1231@gmail.com
  * Date: June 2025
