@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2025 at 04:53 AM
+-- Generation Time: Jun 29, 2025 at 02:27 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -19,13 +19,9 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `dost_kalinga`
-
--- Create the database if it doesn't exist
-CREATE DATABASE IF NOT EXISTS dost_kalinga;
-
--- Use the database
-USE dost_kalinga;
 --
+CREATE DATABASE IF NOT EXISTS `dost_kalinga` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `dost_kalinga`;
 
 -- --------------------------------------------------------
 
@@ -228,6 +224,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+('1UbQ9ZtphVyZnaI2g4X2Kg9tW1aaENIjfHlmruch', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNW1xYVV0TTBXbzVLUFdoc00ydnV6ZGpGbE4wZkp0ZUhoRWZuQmxoeiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9qZWN0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1750996754),
+('bKvDzXBJBKgnYJUUY02JDwuW8agDGfgD84QHYxVj', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYXBZaEkyaGprMFB1M21LUFVRd1JPdDU0S3FsU0tHQ2ViZHdISkxNciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9qZWN0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1750820153),
 ('EHgIJ3NQREvBcv1XCKOzmqtPcagaL5OK1p27dVQs', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidmF6NVVLZHJBZ0pwbjVNOHZkamVDZkg4dVB2S0FCTzlYNk1WYktrRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9qZWN0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1750767860);
 
 -- --------------------------------------------------------
